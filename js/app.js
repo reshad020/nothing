@@ -16,19 +16,21 @@ const showProducts = (products) => {
     const ratingCount = product.rating.count;
     const div = document.createElement("div");
     div.classList.add("product");
+
+    // Making card for every product
     div.innerHTML = `<div class="single-product  text-light mx-1 my-2">
       <div>
     <img class="product-image" src=${image}></img>
       </div>
-      <h3 class="text-warning">${product.title}</h3>
+      <h3 class="text-warning fs-4 my-2">${product.title}</h3>
       <p>Category: ${product.category}</p>
-      <h2>Price: $ ${product.price}</h2>
-      <h5 class="text-info fw-bold">Rating : ${rating} <span class="text-secondary"> Count:${ratingCount} </span>  </h5>
-      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
+      <h2 class="fs-3 my-2">Price: $ <span class="fw-bold text-success"> ${product.price} </span></h2>
+      <h5 class="text-info fs-6 mt-2 mb-4">Rating : ${rating} <span class="text-secondary"> Count:${ratingCount} </span>  </h5>
+      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-light">add to cart</button>
       
 
      
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="${product.title}">
+<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="${product.title}">
   Details
 </button>
 
@@ -47,6 +49,7 @@ const addToCart = (id, price) => {
   document.getElementById("total-Products").innerText = count;
 };
 
+// Common Function for getting input Value
 const getInputValue = (id) => {
   const element = document.getElementById(id).innerText;
   const convertToFloat = parseFloat(element);

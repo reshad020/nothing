@@ -39,7 +39,7 @@ body {
   padding: 10px;
   transition: 0.6s;
   height: 500px;
-  background-color:darkslategrey;
+  background-color: rgb(49, 77, 87);
   overflow: auto;
 }
 .single-product:hover {
